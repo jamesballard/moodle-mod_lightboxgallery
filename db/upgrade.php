@@ -171,7 +171,7 @@ function xmldb_lightboxgallery_upgrade($oldversion=0) {
             $dbman->rename_field($table, $field, 'description');
         }
 
-        $field = new xmldb_field('metatype', XMLDB_TYPE_CHAR, '20', null, XMLDB_NOTNULL, array('caption', 'tag'), 'caption', 'image');
+        $field = new xmldb_field('metatype', XMLDB_TYPE_CHAR, '20', null, XMLDB_NOTNULL, null, null, 'image');
         if ($dbman->table_exists($table) && !$dbman->field_exists($table, $field)) {
             $dbman->add_field($table, $field);
         }
